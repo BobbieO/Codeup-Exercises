@@ -25,8 +25,9 @@ foreach($things as $thing) {
         echo "{$thing}\n";
     } elseif (is_array($thing)) {
         foreach($thing as $thing2) {
-            echo "{$thing2}\n";
+            echo "{$thing2}";
         }
+        echo "\n"; 
     }
 }
 
