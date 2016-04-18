@@ -19,10 +19,17 @@ foreach($things as $thing) {
     }
 }
 
+// loop that outputs only scalar items, and items within the array
+foreach($things as $thing) {
+    if (is_scalar($thing)) {
+        echo "{$thing}\n";
+    } elseif (is_array($thing)) {
+        foreach($thing as $thing2) {
+            echo "{$thing2}\n";
+        }
+    }
+}
 
-
-
-//integer, float, boolean, array, null, string
 
 
 // example: For vs foreach:
