@@ -1,5 +1,9 @@
 <?php
 
+$a = 20;
+$b = 2;
+//these variables aren't "seen" by the functions bc they exist outside of the functions
+
 function add($a, $b)
 {
     return $a + $b;
