@@ -26,10 +26,10 @@ $books = array(
 
 //loop to iterate through each book, keys and values
 foreach($books as $title => $book) {
-    echo "Book title is {$title}.\n";
+    // echo "Book title is {$title}.\n";
     
     foreach($book as $key => $value) {
-        echo "{$key} {$value}\n";
+        // echo "{$key} {$value}\n";
     }
 
     //updated to show only books pubbed after 1950.
