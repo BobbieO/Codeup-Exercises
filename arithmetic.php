@@ -1,32 +1,48 @@
 <?php
 
-$a = 20;
-$b = 2;
-//these variables aren't "seen" by the functions bc they exist outside of the functions
-
 function add($a, $b)
 {
-    return $a + $b;
+    if (is_numeric($a) && is_numeric($b)) {
+        return $a + $b;
+    } else {
+        return "Error: {$a} and {$b}. \$a and \$b must both be numbers.\n";
+    }
 }
 
 function subtract($a, $b)
 {
-    return $a - $b;
+    if (is_numeric($a) && is_numeric($b)) {
+        return $a - $b;
+    } else {
+        return "Error: {$a} and {$b}. \$a and \$b must both be numbers.\n";
+    }
 }
 
 function multiply($a, $b)
 {
-    return $a * $b;
+    if (is_numeric($a) && is_numeric($b)) { 
+        return $a * $b;
+    } else {
+        return "Error: {$a} and {$b}. \$a and \$b must both be numbers.\n"; 
+    }  
 }
 
 function divide($a, $b)
 {
-    return $a / $b;
+    if (is_numeric($a) && is_numeric($b)) { 
+        return $a / $b;
+    } else {
+        return "Error: {$a} and {$b}. \$a and \$b must both be numbers.\n"; 
+    }
 }
 
 function modulus($a, $b)
 {
-    return $a % $b;
+    if (is_numeric($a) && is_numeric($b)) { 
+        return $a % $b;
+    } else {
+        return "Error: {$a} and {$b}. \$a and \$b must both be numbers.\n"; 
+    }
 }
 
 echo add(5, 6) . PHP_EOL;
