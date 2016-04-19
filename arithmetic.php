@@ -3,28 +3,28 @@
 
 function add($a, $b)
 {
-    if (is_numeric($a) && is_numeric($b)) {
-        return $a + $b;
-    } else {
+    if (!is_numeric($a) || !is_numeric($b)) {
         return throwErrorMessage($a, $b);
+    } else {
+        return $a + $b;
     }
 }
 
 function subtract($a, $b)
 {
-    if (is_numeric($a) && is_numeric($b)) {
-        return $a - $b;
-    } else {
+    if (!is_numeric($a) || !is_numeric($b)) {
         return throwErrorMessage($a, $b);
+    } else {
+        return $a - $b;
     }
 }
 
 function multiply($a, $b)
 {
-    if (is_numeric($a) && is_numeric($b)) { 
-        return $a * $b;
-    } else {
+    if (!is_numeric($a) || !is_numeric($b)) { 
         return throwErrorMessage($a, $b); 
+    } else {
+        return $a * $b;
     }  
 }
 
@@ -39,10 +39,10 @@ function divide($a, $b)
 
 function modulus($a, $b)
 {
-    if (is_numeric($a) && is_numeric($b)) { 
-        return $a % $b;
-    } else {
+    if (!is_numeric($a) || !is_numeric($b)) { 
         return throwErrorMessage($a, $b); 
+    } else {
+        return $a % $b;
     }
 }
 
@@ -52,7 +52,7 @@ function throwErrorMessage($a, $b)
 }
 
 
-echo add(5, 6) . PHP_EOL;
+echo add(5, 'blah') . PHP_EOL;
 echo subtract(10, 2) . PHP_EOL;
 echo multiply(4, 6) . PHP_EOL;
 echo divide(66, 0) . PHP_EOL;
