@@ -27,19 +27,25 @@ $books = array(
 //loop to iterate through each book, keys and values
 foreach($books as $title => $book) {
     echo "Book title is {$title}.\n";
+    
     foreach($book as $key => $value) {
         echo "{$key} {$value}\n";
     }
+
+    //updated to show only books pubbed after 1950.
+    if($book['published'] > 1950) {
+        echo "{$title} was published after 1950.\n";
+    }
+    
     echo "================================\n";
 }
 
 
 
-//update to show only books written after 1950
 
 //example:
 //$names = ['Issac', 'Ben', 'Cameron']
 //foreach($names as $firstName => $value) {
-//    echo "\$value has a key of [$key} and a value of {$value}\n";
+//    echo "\$value has a key of [$key} and a vale of {$value}\n";
 //} outputs $value has a key of 0 and a value of Issac;
         //  $value has a key of 1 and a value of Ben etc;
