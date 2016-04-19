@@ -28,6 +28,12 @@ function divide($a, $b)
 
 echo divide(66, 2) . PHP_EOL;
 
+function modulus($a, $b)
+{
+    return $a % $b;
+}
+
+echo modulus(3, 2) . PHP_EOL;
 
 
 
