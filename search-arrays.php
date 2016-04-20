@@ -5,14 +5,33 @@ $names = ['Tina', 'Dana', 'Mike', 'Amy', 'Adam'];
 $compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael'];
 
 $firstName = 'Tina';
-$search = array_search($firstName, $names);
 
-if($search!==false) {
-    echo $names[$search] . PHP_EOL;
+//to search for given value and return true/false if exists in array
+function inArray($itemSearchingFor, $anyArray) {
+    $nameSearch = array_search($itemSearchingFor, $anyArray);
+    if ($nameSearch !== false) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
-if($search==$firstName) {
-    echo "TRUE\n";
-} else {
-    echo "FALSE\n";
+//testing above function
+var_dump(inArray('Tina', $names));
+var_dump(inArray('Bob', $names));
+
+//to compare any two arrays and find number of common values
+function compareTwo($arrayOne, $arrayTwo) {
+    $counter = 0;
+    foreach($arrayOne as $itemOne) {
+        if (inArray($itemOne, $arrayTwo)==true ) {
+            $counter++;
+        } 
+    }
+    return $counter;
 }
+
+var_dump(compareTwo($names, $compare)) . PHP_EOL;
+
+
+
