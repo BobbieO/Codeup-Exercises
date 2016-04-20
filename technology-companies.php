@@ -44,7 +44,22 @@ $companies = [
         'Jean-Louis Gassée'
     ]
 ];
+//make a copy to maintain the original array
+$copy = $companies;
 
 //to output the companies array in current form
+echo "untouched\n";
 print_r($companies);
+
+// sort by company name and output
+echo "sorted by company name\n";
+ksort($copy);
+print_r($copy);
+
+//sort people in each company alphabetically
+// echo "company's people sorted by alpha\n";
+// foreach
+
+
+
 
