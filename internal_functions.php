@@ -5,29 +5,35 @@ function inspect($variable)
 {
     if(is_string($variable)) 
     {
-       return "This is a string\n"; 
+       return "This is a string with value of '{$variable}'.\n"; 
     }
-    else if (is_array($variable)) 
+    else if (is_array($variable) && ($variable==[])) 
     {
-       return "This is an array\n"; 
+       return "This is an empty array\n"; 
+    }
+    else if (is_array($variable))
+    {
+        return "This is an array\n";
     }
     else if(is_bool($variable)) 
     {
-       return "This is a boolean\n"; 
+       return "This is a boolean with a value of '{$variable}'\n"; 
     }
     else if(is_int($variable)) 
     {
-       return "This is an integer\n"; 
+       return "This is an integer with a value of '{$variable}'\n"; 
     }
     else if(is_float($variable)) 
     {
-       return "This is a float\n"; 
+       return "This is a float with a value of " . "'" . number_format($variable, 1) . "'" . PHP_EOL; 
     }
     else if(is_null($variable)) 
     {
-       return "This is null\n"; 
+       return "The value is NULL\n"; 
     }
 }
+
+
 
 // Do not mofify these variables!
 $string1 = "I'm a little teapot";
