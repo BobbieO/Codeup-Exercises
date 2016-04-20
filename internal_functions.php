@@ -17,7 +17,7 @@ function inspect($variable)
     }
     else if(is_bool($variable)) 
     {
-       return "This is a boolean with a value of '{$variable}'\n"; 
+       return "This is a boolean with a value of " . ($variable ? 'true' : 'false') . PHP_EOL; 
     }
     else if(is_int($variable)) 
     {
@@ -33,8 +33,6 @@ function inspect($variable)
     }
 }
 
-
-
 // Do not mofify these variables!
 $string1 = "I'm a little teapot";
 $string2 = '';
@@ -47,8 +45,6 @@ $num2 = 0.0;
 $num3 = 12;
 $num4 = 14.4;
 $null = NULL;
-
-
 
 // TODO: After each echo statement, use inspect() to output the variable's type and its value
 
