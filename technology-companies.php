@@ -57,8 +57,27 @@ ksort($copy);
 print_r($copy);
 
 //sort people in each company alphabetically
-// echo "company's people sorted by alpha\n";
-// foreach
+echo "company's people sorted by alpha\n";
+
+//loop to iterate through each company
+foreach ($copy as $company => $person) {
+    //sorting person by alpha, 'stores' in working memory--doesn't actually alter person info until reassigned
+    sort($person);
+
+    //reassigns new alpha'd person value to the existing (unaltered) company key within the copy array.
+    $copy[$company] = $person;
+}
+//outputs result of above foreach loop
+print_r($copy);
+
+
+//sort companies from biggest to smallest
+array_multisort($copy);
+echo "sorted from biggest to smallest\n";
+print_r($copy);
+
+
+
 
 
 
