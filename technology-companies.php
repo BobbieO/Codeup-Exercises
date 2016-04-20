@@ -44,3 +44,7 @@ $companies = [
         'Jean-Louis Gassée'
     ]
 ];
+
+//to output the companies array in current form
+print_r($companies);
+
