@@ -52,4 +52,43 @@ function compareTwo($arrayOne, $arrayTwo) {
 var_dump(compareTwo($names, $compare)) . PHP_EOL;
 
 
+function combineArrays($arrayA, $arrayB) {
+    // empty array to add things to
+    $arrayC = [];
+    foreach($arrayA as $itemA) {
+        //put all arrayA items into arrayC
+        array_push($arrayC, $itemA);
+    }
+
+    foreach($arrayB as $itemB) {
+        //if arrayB item is not already in arrayC, add
+        if (!inArray($itemB, $arrayC)) {
+            array_push($arrayC, $itemB);
+        }
+    }
+
+    return $arrayC;
+}
+
+var_dump(combineArrays($names, $compare));
+
+//new function mimicing above but with exact order
+function combineArraysAgain($arrayUno, $arrayDos) {
+    $arrayTres = [];
+    //within arrayUno has key with value itemUno
+    foreach($arrayUno as $key => $itemUno) {
+        //if itemUno-value is identical to the value of the item in arrayDos
+        if ($itemUno==$arrayDos[$key]) {
+            //add only itemUno from first array not both
+            array_push($arrayTres, $itemUno);
+        } else {
+            //add both items from Uno and Dos since not identical
+            array_push($arrayTres, $itemUno, $arrayDos[$key]);
+        }
+    }
+    return $arrayTres;
+}
+
+var_dump(combineArraysAgain($names, $compare));
+
 
