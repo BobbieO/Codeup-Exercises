@@ -6,11 +6,16 @@ $physicistsString = 'Gordon Freeman, Samantha Carter, Sheldon Cooper, Quinn Mall
 $physicistsArray = explode(', ', $physicistsString);
 
 //takes original array and applies to function humanizedList
-function humanizedList($physicistsArray) {
+function humanizedList($physicistsArray, $changesToAlpha=false) {
 
     //removes end/Tony, stores in new variable
     $cutOnePhysi = array_pop($physicistsArray);
-    
+
+    //alphabetize array if second parameter is true
+    if($changesToAlpha) {
+        sort($physicistsArray);
+    }
+
     //changes back to string in new variable minus Tony item
     $newPhysicistsString = implode(', ', $physicistsArray);
 
@@ -22,12 +27,13 @@ function humanizedList($physicistsArray) {
     return $famousFakePhysicists;
 }
 
-//takes array and places into function, applies to variable to enable call
+//takes array and places into function, applies to variable to enable call. Unalphaed
 $famousFakePhysicists = humanizedList($physicistsArray);
+echo "Some of the most famous fictional theoretical physicists are {$famousFakePhysicists}.\n";
 
-
-echo "Some of the most famous fictional theoretical physicists are {$famousFakePhysicists}.";
-
+//alphabetized
+$famousFakePhysicists = humanizedList($physicistsArray, true);
+echo "Some of the most famous fictional theoretical physicists are {$famousFakePhysicists}.\n";
 
 
 
