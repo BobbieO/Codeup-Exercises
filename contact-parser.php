@@ -1,18 +1,45 @@
 <?php
 
+//name of file
+$filename = 'contacts.txt';
+
 function parseContacts($filename)
 {
-    $contacts = array();
-
+    // $contacts = array();
     // todo - read file and parse contacts
 
-    return $contacts;
+    //connection
+    $handle = fopen($filename, 'r');
+
+    //get contents
+    $contents = fread($handle, filesize($filename));
+
+    //to make array of contacts
+    $contacts = explode("\n", $contents);
+    array_pop($contacts);
+
+    //new empty array
+    $newContacts = [];
+
+    //close connection
+    fclose($handle);
+
+    //check for erased empty space
+    // var_dump($contacts);
+
+    foreach($contacts as $person) {
+        $newArray = [];
+        $personInfo = explode("|", $person);
+        $name = $personInfo[0];
+        $phone = substr ($personInfo[1], 0, 3) . "-" . substr ($personInfo[1], 3, 3) . "-" . substr ($personInfo[1], 6, 4);
+        $newArray = ['name' => $name, 'phone' => $phone];
+        array_push($newContacts, $newArray);
+    }
+
+    return $newContacts;
 }
 
 var_dump(parseContacts('contacts.txt'));
-
-
-
 
 
 // NOTES
@@ -44,3 +71,8 @@ var_dump(parseContacts('contacts.txt'));
 // $array = explode("\n", $contents);
 
 // var_dump($array);
+
+
+
+
+
