@@ -2,23 +2,15 @@
 
 $physicistsString = 'Gordon Freeman, Samantha Carter, Sheldon Cooper, Quinn Mallory, Bruce Banner, Tony Stark';
 
-//changes string into array
+// //changes string into array
 $physicistsArray = explode(', ', $physicistsString);
-
-//pops off end item, Tony Stark
-$cutOnePhysi = array_pop($physicistsArray);
-
-//changes back into a string, store in new variable (still minus Tony)
-$newPhysicistsString = implode(', ', $physicistsArray);
-//above stuff duplicated below in function^^
-
 
 //takes original array and applies to function humanizedList
 function humanizedList($physicistsArray) {
 
     //removes end/Tony, stores in new variable
     $cutOnePhysi = array_pop($physicistsArray);
-
+    
     //changes back to string in new variable minus Tony item
     $newPhysicistsString = implode(', ', $physicistsArray);
 
