@@ -28,11 +28,22 @@ function parseContacts($filename)
     // var_dump($contacts);
 
     foreach($contacts as $person) {
+
+        //empty array to hold bits of person info
         $newArray = [];
+
+        //breaks person info into array
         $personInfo = explode("|", $person);
+
+        //marks info at index 0 as "name"
         $name = $personInfo[0];
+
+        //marks info at index 1 as "phone" and inserts dashes
         $phone = substr ($personInfo[1], 0, 3) . "-" . substr ($personInfo[1], 3, 3) . "-" . substr ($personInfo[1], 6, 4);
+        
+        //marks name and phone as parts of newarray
         $newArray = ['name' => $name, 'phone' => $phone];
+
         array_push($newContacts, $newArray);
     }
 
