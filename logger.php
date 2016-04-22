@@ -1,9 +1,11 @@
 <?php
 
+date_default_timezone_set("America/Chicago");
+
 function logMessage($logLevel, $message)
 {
     //setting variable for correct time/date format
-    $currentDateTime = date('Y-m-d h:i:s');
+    $currentDateTime = date('Y-m-d h:i:s=T');
 
     $currentDate = date('Y-m-d');
     

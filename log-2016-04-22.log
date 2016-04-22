@@ -7,3 +7,9 @@
 2016-04-22 07:06:58 ERROR this is an error test
 2016-04-22 07:10:13 INFO It's working!
 2016-04-22 07:10:13 ERROR Yay, no error!
+2016-04-22 07:21:22=UTC INFO It's working!
+2016-04-22 07:21:22=UTC ERROR Yay, no error!
+2016-04-22 07:22:55=UTC(CndUTC) INFO It's working!
+2016-04-22 07:22:55=UTC(CndUTC) ERROR Yay, no error!
+2016-04-22 02:26:31=CDT INFO It's working!
+2016-04-22 02:26:31=CDT ERROR Yay, no error!
