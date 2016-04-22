@@ -36,8 +36,8 @@ function logError($message)
 }
 
 //call each new function with new message
-logInfo("this is an info test");
-logError("this is an error test");
+logInfo("It's working!");
+logError("Yay, no error!");
 
 
 

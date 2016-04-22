@@ -5,3 +5,5 @@
 2016-04-22 07:04:19 ERROR this is an error test
 2016-04-22 07:06:58 INFO this is an info test
 2016-04-22 07:06:58 ERROR this is an error test
+2016-04-22 07:10:13 INFO It's working!
+2016-04-22 07:10:13 ERROR Yay, no error!
