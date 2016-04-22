@@ -1,5 +1,6 @@
 <?php
 
+//set correct timezone
 date_default_timezone_set("America/Chicago");
 
 function logMessage($logLevel, $message)
