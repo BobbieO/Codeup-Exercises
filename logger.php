@@ -20,7 +20,7 @@ function logMessage($logLevel, $message)
     $handle = fopen($filename, 'a');
 
     //writes new stuff to file, with correct order and spacing
-    fwrite($handle, PHP_EOL . $currentDateTime . " " . $logLevel . " " . $message);
+    fwrite($handle, PHP_EOL . $currentDateTime . " " . "[" . $logLevel ."]" . " " . $message);
     
     //closes connection
     fclose($handle);
