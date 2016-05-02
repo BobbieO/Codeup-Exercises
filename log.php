@@ -1,60 +1,44 @@
 <?php
 
+//set correct timezone
+date_default_timezone_set("America/Chicago");
+
 class Log
 {
     public $filename;
-
+    
     public function logMessage($logLevel, $message)
     {
+        $this->namefile();
+
         $handle = fopen($this->filename, 'a');
-        fwrite($handle, PHP_EOL . "[" . $logLevel . "]" . $message);
+
+        //setting variable for correct time/date format
+        $currentDateTime = date('Y-m-d h:i:s=T');
+
+        fwrite($handle, PHP_EOL . $currentDateTime . " " . "[" . $logLevel ."]" . " " . $message);
+
         fclose($handle);
     }
 
     public function info($message) 
     {
-        logMessage("INFO", $message);
+        $this->logMessage("INFO", $message);
     }
 
     public function error($message)
     {
-        logMessage("ERROR", $message);
+        $this->logMessage("ERROR", $message);
+    }
+
+    public function namefile()
+    {
+        $currentDate = date('Y-m-d');
+
+        //setting the file's name to a variable
+        $this->filename = "log-$currentDate.log";
+
     }
 }
 
 ?>
-
-
-// <!-- NOTES
-
-// //this is the class (the blueprint, the plan)
-// class Person
-// {
-//     public $firstName;
-//     public $lastName;
-//     public $fruit = array();
-
-//     public function roamCountryside()
-//     {
-//         $distance = mt_rand(1, 50);
-//         return $this->firstName . " is walking [$distance} miles west.";
-//     }
-// }
-
-// //instantiated class ($person is the object, instance of plan). This would be in a separate file in actual use, not here.
-// $person = new Person;
-// $person->firstName = 'Isaac';
-// $person->lastName = 'Castillo';
-// $person->fruit = array('apple', 'orange'); 
-
-// //another object of person in the class Person
-// $person2 = new Person;
-// $person2->firstName = 'Bobbie';
-
-// echo $person->roamCountryside();
-// echo $person2->roamCountryside();
-
-
-
-
-// -->
