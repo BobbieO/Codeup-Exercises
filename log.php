@@ -23,7 +23,7 @@ class Log
 
     public function info($message) 
     {
-        $this->logMessage("INFO", $message);
+        $this->logMessage('INFO', $message);
     }
 
     public function error($message)
