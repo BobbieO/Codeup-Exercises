@@ -39,8 +39,6 @@ class Log
     {
         fclose($this->handle);
     }
-
-
 }
 
 ?>
