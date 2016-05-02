@@ -6,19 +6,23 @@ date_default_timezone_set("America/Chicago");
 class Log
 {
     public $filename;
+    public $handle;
+   
+    public function __construct($prefix = 'log')
+    {
+        $currentDate = date('Y-m-d');
+       
+        $this->filename = "{$prefix}-{$currentDate}.log";
+
+        $this->handle = fopen($this->filename, 'a');
+    }
     
     public function logMessage($logLevel, $message)
     {
-        $this->namefile();
-
-        $handle = fopen($this->filename, 'a');
-
         //setting variable for correct time/date format
         $currentDateTime = date('Y-m-d h:i:s=T');
 
-        fwrite($handle, PHP_EOL . $currentDateTime . " " . "[" . $logLevel ."]" . " " . $message);
-
-        fclose($handle);
+        fwrite($this->handle, PHP_EOL . $currentDateTime . " " . "[" . $logLevel ."]" . " " . $message);
     }
 
     public function info($message) 
@@ -31,14 +35,12 @@ class Log
         $this->logMessage("ERROR", $message);
     }
 
-    public function namefile()
+    public function __destruct()
     {
-        $currentDate = date('Y-m-d');
-
-        //setting the file's name to a variable
-        $this->filename = "log-$currentDate.log";
-
+        fclose($this->handle);
     }
+
+
 }
 
 ?>
