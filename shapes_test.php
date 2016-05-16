@@ -3,8 +3,10 @@
 REQUIRE_ONCE 'rectangle.php';
 
 $Rectangle = new Rectangle(20, 40);
+echo $Rectangle->area() . PHP_EOL;
 
-echo $Rectangle->area();
+$Rectangle = new Rectangle(3, 100);
+echo $Rectangle->area() . PHP_EOL;
 
 ?>
 
