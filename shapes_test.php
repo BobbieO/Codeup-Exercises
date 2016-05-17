@@ -1,6 +1,7 @@
 <?php
 
 REQUIRE_ONCE 'rectangle.php';
+REQUIRE_ONCE 'square.php';
 
 $Rectangle = new Rectangle(20, 40);
 echo 'Rectangle One area is: ' . $Rectangle->area() . PHP_EOL;

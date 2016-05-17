@@ -1,7 +1,5 @@
 <?php
 
-REQUIRE 'rectangle.php';
-
 class Square extends Rectangle
 {
     public function perimeter() {
