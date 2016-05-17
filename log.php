@@ -5,8 +5,8 @@ date_default_timezone_set("America/Chicago");
 
 class Log
 {
-    protected $filename;
-    protected $handle;
+    private $filename;
+    private $handle;
    
     public function __construct($prefix = 'log')
     {
@@ -23,6 +23,7 @@ class Log
             $this->filename = $filename;
         } else {
             echo "Error.";
+            die();
         }
     }
     
