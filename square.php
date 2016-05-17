@@ -1,5 +1,9 @@
 <?php
 
+REQUIRE 'rectangle.php';
+
+
+
 
 
 ?>
