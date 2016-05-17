@@ -19,10 +19,10 @@ class Log
 
     public function setFilename($filename)
     {
-        if(is_string($filename)) {
+        if(is_string($filename) && touch($filename) && is_writable($filename)) {
             $this->filename = $filename;
         } else {
-            echo "Not a string.";
+            echo "Error.";
         }
     }
     
