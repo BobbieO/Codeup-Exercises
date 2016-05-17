@@ -4,8 +4,18 @@ class Square extends Rectangle
 {
     public function __construct($height)
     {
-        parent::__construct($height, $height);
+         $this->setHeight($height);
     } 
+
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+    public function getHeight()
+    {
+        return $this->height;
+    }
 
     public function area() 
     {
